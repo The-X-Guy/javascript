@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/funciones.js"></script>
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+    <title>Funciones</title>
+</head>
+<body>
+    <div id="contenido">
+        <div id="cabecera">
+            <p class="banner">Ejercicios de JavaScript - Funciones</p>
+            <table>
+                <th><a href="index.html">Inicio</a></th>
+                <th><a href="operadores.html">Operadores</a></th>
+                <th><a href="estructuras_control.html">Estructuras de control</a></th>
+                <th><a href="estructuras_control_extendida.html">Estructuras de control - Extendida</a></th>
+                <th><a href="#">Funciones</a></th>
+                <th><a href="eventos.html">Eventos</a></th>
+                <th><a href="otros.html">Otros</a></th>
+            </table>
+        </div>
+        <form onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 2</legend>
+                <p>
+                    Introduce un número natural (entero mayor que 1) y se calcula si es par 
+                    o impar mediante una función.
+                </p>
+                <div>
+                    <label>Introduce un número:</label>
+                    <input type="number" id="primo">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    numeroPrimo($('#primo').val())
+                ">
+            </fieldset>
+        </form>
+        <form onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 9</legend>
+                <p>
+                    Se introduce un número natural, y se calculan todos sus divisores.<br>
+                    Se permite el cálculo de divisores hasta el número 999.999.<br>
+                    El cálculo de los divisores de un número cercano a 999.999 puede
+                    tomar hasta 2 segundos en calcularse.
+                </p>
+                <div>
+                    <label>Introduce un número:</label>
+                    <input type="number" id="numero_divisores">
+                </div>
+                <input id="calcular_divisores" type="submit" value="Calcular" onclick="
+                    calcularDivisores($('#numero_divisores').val())
+                    //DOM --> document.getElementById('numero_divisores').value
+                ">
+            </fieldset>
+        </form>
+        <form onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 10</legend>
+                <p>
+                    Se calcula el factorial de un número natural (número entero positivo).  
+                </p>
+                <div>
+                    <label>Introduce un número:</label>
+                    <input type="number" id="factorial">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    calcularFactorial($('#factorial').val())
+                    //DOM --> document.getElementById('factorial').value
+                ">
+            </fieldset>
+        </form>
+        <form onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 11</legend>
+                <p>
+                    A partir de un número introducido, se calcula la suma de todos sus dígitos.
+                </p>
+                <div>
+                    <label>Introduce un número:</label>
+                    <input type="number" id="numero" step="any">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    sumarCifras($('#numero').val())
+                    //DOM --> document.getElementById('numero').value
+                ">
+            </fieldset>
+        </form>
+        <form onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 12</legend>
+                <p>
+                    Conversión de un núermo decimal a binario.
+                </p>
+                <div>
+                    <label>Introduce un número:</label>
+                    <input type="number" id="numero_decimal" step="any">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    dec2bin($('#numero_decimal').val())
+                    //DOM --> document.getElementById('numero_decimal').value
+                ">
+            </fieldset>
+        </form>
+        <footer>
+            (c) 2019 | Fran Gálvez | IES Los Manantiales
+        </footer>
+    </div>  
+</body>
+</html>

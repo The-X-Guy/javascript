@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>Chat</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Mi chat</legend>
+            <div id="general">
+                <div id="form_labels">
+                    <label>Usuario: </label><br>
+                    <label>Mensaje: </label><br>
+                </div>
+                <div id="form_inputs">
+                    <input type="text" id="user" size="10" onclick="javascript:void(0)">
+                    <input type="button" value="?" onclick="javascript:alert($(user).val())"><br>
+                    <textarea cols="30" rows="10" id="message" ></textarea>
+                    <input type="button" value="?" onclick="javascript:alert($(message).val())"><br>
+                </div>
+            </div>
+            <div id="validar">
+                <input type="button" value="Enviar" onclick="
+                    let chat = $('#chat');    
+                    let output = writeMessage();
+                    chat.append(output).innerHTML;
+                ">
+                <input type="button" value="Cancelar" onclick="javascript:limpiar()">
+            </div>
+        </fieldset>
+    </form>
+    <div id="chat"></div>
+</body>
+</html>

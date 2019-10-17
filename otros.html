@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="otros.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+    <title>Otros</title>
+</head>
+<body>
+    <div id="contenido">
+        <div id="cabecera">
+            <p class="banner">Ejercicios de JavaScript - Otros</p>
+            <table>
+                <th><a href="index.html">Inicio</a></th>
+                <th><a href="operadores.html">Operadores</a></th>
+                <th><a href="estructuras_control.html">Estructuras de control</a></th>
+                <th><a href="estructuras_control_extendida.html">Estructuras de control - Extendida</a></th>
+                <th><a href="funciones.html">Funciones</a></th>
+                <th><a href="eventos.html">Eventos</a></th>
+                <th><a href="#">Otros</a></th>
+            </table>
+        </div>
+        <form name="f1" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 1</legend>
+                <p>
+                    Dada una cadena de texto de entrada, se escribe de forma
+                    horizontal.
+                </p>
+                <div>
+                    <label>Escribe la cadena de texto:</label>
+                    <input id="f1.text" type="text">
+                </div>
+                <input type="submit" value="Ordenar" onclick="
+                    ordenarHorizontal(document.getElementById('f1.text').value)
+                ">
+            </fieldset>
+        </form>
+        <form name="f2" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 2</legend>
+                <p>
+                    Dada una cadena de texto de entrada, se escribe del revés.
+                </p>
+                <div>
+                    <label>Escribe la cadena de texto:</label>
+                    <input id="f2.text" type="text">
+                </div>
+                <input type="submit" value="Ordenar" onclick="
+                    ordenarDelReves(document.getElementById('f2.text').value)
+                ">
+            </fieldset>
+        </form>
+        <form name="f3" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 3</legend>
+                <p>
+                    Dada una cadena de texto de entrada, se sacan por pantalla aquellos caracteres que
+                    ocupan posiciones para e impares agrupados.
+                </p>
+                <div>
+                    <label>Escribe la cadena de texto:</label>
+                    <input id="f3.text" type="text">
+                </div>
+                <input type="submit" value="Ordenar" onclick="
+                    paresImpares(document.getElementById('f3.text').value)
+                ">
+            </fieldset>
+        </form>
+        <form name="f4" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 4</legend>
+                <p>
+                    Dada una cadena de texto de entrada, la "hackea". Se sistituyes las vocales
+                    por números: a(4), e(3), i(1) y o(0).
+                </p>
+                <div>
+                    <label>Escribe la cadena de texto:</label>
+                    <input id="f4.text" type="text">
+                </div>
+                <input type="submit" value="Hackear!" onclick="
+                    hackString(document.getElementById('f4.text').value)
+                ">
+            </fieldset>
+        </form>
+        <form name="f5" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 4</legend>
+                <p>
+                    Dada una cadena de texto de entrada se buscan y reemplazan las palabras.
+                </p>
+                <div>
+                    <label>Escribe la cadena de texto:</label>
+                    <input id="f5.cadena" type="text">
+                </div>
+                <div>
+                    <label>Escribe la palabra a reemplazar.</label>
+                    <input id="f5.replace" type="text">
+                </div>
+                <div>
+                    <label>Escribe la palabra de reemplazo</label>
+                    <input id="f5.replacement" type="text">
+                </div>
+                <input type="submit" value="Reemplazar" onclick="
+                    replaceStringSlice(document.getElementById('f5.text').value)
+                ">
+            </fieldset>
+        </form>
+        <footer>
+           (c) 2019 | Fran Gálvez | IES Los Manantiales
+        </footer>
+    </div> 
+</body>
+</html>

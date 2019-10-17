@@ -1,0 +1,27 @@
+body {
+    background-color: #A9A9A9;
+    width: 30%;
+}
+input#validar {
+    float: left;
+}
+#form_labels{
+    float: left;
+}
+#form_inputs {
+    float: right;
+}
+#general {
+    float:left;
+    width: 100%;
+}
+label {
+    width: 60%;
+    float: left;
+}
+input {
+    margin: 1%;
+}
+textarea {
+    margin: 1%;
+}

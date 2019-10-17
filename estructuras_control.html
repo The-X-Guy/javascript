@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/estructuras_control.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+    <title>Estructuras de control</title>
+</head>
+<body>
+    <div id="contenido">
+        <div id="cabecera">
+            <p class="banner">Ejercicios de JavaScript - Estructuras de control</p>
+            <table>
+                <th><a href="index.html">Inicio</a></th>
+                <th><a href="operadores.html">Operadores</a></th>
+                <th><a href="#">Estructuras de control</a></th>
+                <th><a href="estructuras_control_extendida.html">Estructuras de control - Extendida</a></th>
+                <th><a href="funciones.html">Funciones</a></th>
+                <th><a href="eventos.html">Eventos</a></th>
+                <th><a href="otros.html">Otros</a></th>
+            </table>
+        </div>
+        <form name="f1" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 1</legend>
+                <p>¿Está el número comprendido entre 1 y 10?</p>
+                <div>
+                    <label>Introduce un número:</label>
+                    <input id="f1.numero" type="number">
+                </div>
+                <input type="submit" value="Comprobar" onclick="
+                    estaComprendido1y10 (
+                        document.getElementById('f1.numero').value
+                    )
+                ">
+            </fieldset>
+        </form>
+        <form name="f2" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 3</legend>
+                <p>
+                    Introduce tres números y pulsa el botón "Calcular" para obtener
+                    el mayor de ellos.
+                </p>
+                <div>
+                    <label>Introduce el primer número:</label>
+                    <input id="f2.n1" type="number" step="any">
+                </div>
+                <div>
+                    <label>Introduce el segundo número:</label>
+                    <input id="f2.n2" type="number" step="any">
+                </div>
+                <div>
+                    <label>Introduce el tercer número:</label>
+                    <input id="f2.n3" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    var ordenados = [];
+                    ordenados = ordenarMenorMayor (
+                        document.getElementById('f2.n1').value,
+                        document.getElementById('f2.n2').value,
+                        document.getElementById('f2.n3').value
+                    );
+                    alert('El número más grande es el '+ordenados[2]);
+                    document.getElementById('f2.n1').value = '';
+                    document.getElementById('f2.n2').value = '';
+                    document.getElementById('f2.n3').value = '';
+                ">
+            </fieldset>
+        </form>
+        <form name="f3" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 3</legend>
+                <p>
+                    Introduce tres números y pulsa el botón "Calcular" para ordernarlos 
+                    de mayor a menor.
+                </p>
+                <div>
+                    <label>Introduce el primer número:</label>
+                    <input id="f3.n1" type="number" step="any">
+                </div>
+                <div>
+                    <label>Introduce el segundo número:</label>
+                    <input id="f3.n2" type="number" step="any">
+                </div>
+                <div>
+                    <label>Introduce el tercer número:</label>
+                    <input id="f3.n3" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    var ordenados = [];
+                    ordenados = ordenarMenorMayor (
+                        document.getElementById('f3.n1').value,
+                        document.getElementById('f3.n2').value,
+                        document.getElementById('f3.n3').value
+                    );
+                    ordenados.toString();
+                    alert('Los números ordenados son: '+ordenados);
+                    document.getElementById('f3.n1').value = '';
+                    document.getElementById('f3.n2').value = '';
+                    document.getElementById('f3.n3').value = '';
+                ">
+            </fieldset>
+        </form>
+        <form name="f4" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 4</legend>
+                <p>
+                    A partir de una calificación dada, devuelve si es insuficiente, suficiente,
+                    notable o sobresaliente.
+                </p>
+                <div>
+                    <label>
+                        Introduce una nota entre 1 y 10.<br><br>
+                        NOTA: Sólo números enteros.
+                    </label>
+                    <input id="f4.nota" type="number">
+                </div>
+                <input type="submit" value="Obtener calificación" onclick="
+                    calificacion (document.getElementById('f4.nota').value)
+                    document.getElementById('f4.nota').value = '';
+                ">
+            </fieldset>
+        </form>
+        <form name="f5" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 5</legend>
+                <p>
+                    Al pulsar el botón "Calcular", se llama a una función que calcula y 
+                    muestra por pantalla todos los números impares comprendidos entre 100 y 120.
+                </p>
+                <input type="submit" value="Calcular" onclick="
+                    alert('Los impares entre 100 y 120 son: '+impares100y120())
+                ">
+            </fieldset>
+        </form>
+        <form name="f6" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 6</legend>
+                <p>
+                    Al pulsar el botón "Calcular", se llama a una función que calcula y
+                    muestra por pantalla todos los múltiplos de 3 entre 1 y 50.
+                </p>
+                <input type="submit" value="Calcular" onclick="
+                    alert('Los múltiplos de 3 entre 1 y 50 son: '+multiplos3_1y50())
+                ">
+            </fieldset>
+        </form>
+        <form name="f7" onsubmit="return false">
+            <fieldset>
+                    <legend>Ejercicio 7</legend>
+                    <p>
+                        Se leen todos los números introducidos hasta que se introduzca un cero, 
+                        entonces se suman y se muestra el resultado.
+                    </p> 
+                    <input type="submit" value="Calcular" onclick="
+                        sumarnNumeros ()//document.getElementById('f7.cadena').value)
+                    ">
+            </fieldset>
+        </form>
+        <form name="f8" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 8</legend>
+                <p>
+                    Al pulsar el botón "Calcular", se llama a una función que calcula y
+                    muestra por pantalla los cuadrados de los números del 1 al 10.
+                </p>
+                <input type="submit" value="Calcular" onclick="
+                    alert('Los cuadrados de los números del 1 al 10 son: '+cuadrados1y10 ())
+                ">
+            </fieldset>
+        </form>
+        <form name="f9" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 9</legend>
+                <p>
+                    Dada una cadena de texto de entrada y un número entero, se imprime la cadena
+                    tantas veces como indique el valor de número.
+                </p>
+                <div>
+                    <label>Introduce un texto:</label>
+                    <input id="f9.text" type="text">
+                </div>
+                <div>
+                    <label>Introduce en número:</label>
+                    <input id="f9.numero" type="number">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    repetirFrase(
+                        document.getElementById('f9.text').value,
+                        document.getElementById('f9.numero').value
+                        )
+                    ">
+                </fieldset>
+            </form>
+        <footer>
+           (c) 2019 | Fran Gálvez | IES Los Manantiales
+        </footer>
+    </div> 
+</body>
+</html>

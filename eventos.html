@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="otros.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+    <style>span {color: red; font-weight: bold;}</style>
+    <title>Otros</title>
+</head>
+<body onload="console.log('web cargada correctamente')" onresize="console.log('Has redimensionado la ventana')"
+onunload="alert('¿Estás seguro de que quieres salir?')">
+    <div id="contenido">
+        <div id="cabecera">
+            <p class="banner">Ejercicios de JavaScript - Eventos</p>
+            <table>
+                <th><a href="index.html">Inicio</a></th>
+                <th><a href="operadores.html">Operadores</a></th>
+                <th><a href="estructuras_control.html">Estructuras de control</a></th>
+                <th><a href="estructuras_control_extendida.html">Estructuras de control - Extendida</a></th>
+                <th><a href="funciones.html">Funciones</a></th>
+                <th><a href="#">Eventos</a></th>
+                <th><a href="otros.html">Otros</a></th>
+            </table>
+        </div>
+        <div>
+            <p>
+                <span>Eventos onload y onresize.</span> Al cargarse la web, se mostrará por consola (F12) "Web cargada correctamente".
+                Al redimensionarse la ventana del navegador, se devolverá por consola el mensaje "Has redimensionado la ventana"
+            </p>
+        </div>
+        <div>
+            <p onclick="alert('Has hecho click sobre el párrafo')" ondblclick="alert('Has hecho doble click sobre el párrafo')">
+               <span>Eventos onclick y ondblclick.</span> Al hacer click o doble click sobre este párrafo, se abrirá una ventana emergente indicando
+               la acción que se ha realizado.
+            </p>
+        <div>
+            <p><span>Evento onkeypress y onchange.</span> Cuando se introduzca contenido en el cuadro de abajo, saltará una ventana emergente
+            por cada pulsación de teclado, y se mostrará por consola que el contenido del elemento ha cambiado usando el evento onchange.</p>
+            <input style="float: none" type="text"
+            onkeypress="alert('Cada vez que pulses una tecla, saltará este mensaje')" onchange="console.log('El elemento ha cambiado')">
+        </div>
+        </div>
+        <footer>
+           (c) 2019 | Fran Gálvez | IES Los Manantiales
+        </footer>
+    </div> 
+</body>
+</html>

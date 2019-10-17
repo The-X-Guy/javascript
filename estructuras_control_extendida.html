@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/estructuras_control_extendida.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+    <title>Estructuras de control - Extendida</title>
+</head>
+<body>
+    <div id="contenido">
+        <div id="cabecera">
+            <p class="banner">Ejercicios de JavaScript - Estructuras de control</p>
+            <table>
+                <th><a href="index.html">Inicio</a></th>
+                <th><a href="operadores.html">Operadores</a></th>
+                <th><a href="estructuras_control.html">Estructuras de control</a></th>
+                <th><a href="#">Estructuras de control - Extendida</a></th>
+                <th><a href="funciones.html">Funciones</a></th>
+                <th><a href="eventos.html">Eventos</a></th>
+                <th><a href="otros.html">Otros</a></th>
+            </table>
+        </div>
+        <form name="f1" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 2</legend>
+                <p>Calcular si un número es positivo o negativo.</p>
+                <div>
+                    <label>Introduce un número:</label>
+                    <input id="f1.numero" type="number">
+                </div>
+                <input type="submit" value="Comprobar" onclick="
+                    esNegativo (
+                        document.getElementById('f1.numero').value
+                    )
+                ">
+            </fieldset>
+        </form>
+        <form name="f2" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 11</legend>
+                <p>
+                    Calcula si un número es par o impar con bucles.
+                </p>
+                <div>
+                    <label>Introduce un número:</label>
+                    <input id="f2.n1" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    esPar(document.getElementById('f2.n1').value)
+                ">
+            </fieldset>
+        </form>
+        <form onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 10</legend>
+                <p>
+                    Este programa calcula la suma total de todos los números
+                    entre un mínimo y un máximo.
+                </p>
+                <div>
+                    <label>Introduce un mínimo:</label>
+                    <input id="minimo" type="number">
+                </div>
+                <div>
+                    <label>Introduce un máximo:</label>
+                    <input id="maximo" type="number">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    sumarTodos (
+                        document.getElementById('minimo').value,
+                        document.getElementById('maximo').value
+                    )
+                    ">
+            </fieldset>
+        </form>
+        <form onsubmit = "return false">
+                <fieldset>
+                    <legend>Ejercicio 12</legend>
+                    <p>
+                        Se calcula la potencia de un número usando bucles.
+                    </p>
+                    <div>
+                        <label>Introduce la base:</label>
+                        <input id="base" type="number">
+                    </div>
+                    <div>
+                        <label>Introduce el exponente:</label>
+                        <input id="exponente" type="number">
+                    </div>
+                    <input type="submit" value="Calcular" onclick="
+                        potencia (
+                            document.getElementById('base').value,
+                            document.getElementById('exponente').value
+                        )
+                        ">
+                </fieldset>
+            </form>
+            <form onsubmit = "return false">
+                    <fieldset>
+                        <legend>Ejercicio 16</legend>
+                        <p>
+                            Se calcula la potencia de un número usando bucles.
+                        </p>
+                        <div>
+                            <label>Introduce el diviendo:</label>
+                            <input id="dividendo" type="number">
+                        </div>
+                        <div>
+                            <label>Introduce el divisor:</label>
+                            <input id="divisor" type="number">
+                        </div>
+                        <input type="submit" value="Calcular" onclick="
+                            restasSucesivas (
+                                document.getElementById('dividendo').value,
+                                document.getElementById('divisor').value
+                            )
+                            ">
+                    </fieldset>
+                </form>
+                <form onsubmit = "return false">
+                        <fieldset>
+                            <legend>Ejercicio 16</legend>
+                            <p>
+                                Se calcula la potencia de un número usando bucles.
+                            </p>
+                            <div>
+                                <label>Introduce el diviendo:</label>
+                                <input id="dividendo" type="number">
+                            </div>
+                            <div>
+                                <label>Introduce el divisor:</label>
+                                <input id="divisor" type="number">
+                            </div>
+                            <input type="submit" value="Calcular" onclick="
+                                restasSucesivas (
+                                    document.getElementById('dividendo').value,
+                                    document.getElementById('divisor').value
+                                )
+                                ">
+                        </fieldset>
+                    </form>
+        <footer>
+           (c) 2019 | Fran Gálvez | IES Los Manantiales
+        </footer>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/operadores.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+    <title>Operadores</title>
+</head>
+<body>
+    <div id="contenido">
+        <div id="cabecera">
+            <p class="banner">Ejercicios de JavaScript - Operadores</p>
+            <table>
+                <th><a href="index.html">Inicio</a></th>
+                <th><a href="#">Operadores</a></th>
+                <th><a href="estructuras_control.html">Estructuras de control</a></th>
+                <th><a href="estructuras_control_extendida.html">Estructuras de control - Extendida</a></th>
+                <th><a href="funciones.html">Funciones</a></th>
+                <th><a href="eventos.html">Eventos</a></th>
+                <th><a href="otros.html">Otros</a></th>
+            </table>
+        </div>
+        <form name="f1" onsubmit="return false">
+            <!-- onsubmit="return false" evita que la pagina se refesque al enviar formulario-->
+            <fieldset>
+                <legend>Ejercicio 1</legend>
+                <p>Cálculo de la suma de tres números.</p>
+                <div>
+                    <label>Primer número:</label>
+                    <input id="f1.s1" type="number" step="any">
+                    <!-- step="any" fuerza que se acepten números en cualquier rango-->
+                </div>
+                <div>
+                    <label>Segundo número:</label>
+                    <input id="f1.s2" type="number" step="any">
+                </div>
+                <div>
+                    <label>Tercer número:</label>
+                    <input id="f1.s3" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular la suma" onclick="
+                    calcularSuma (
+                        document.getElementById('f1.s1').value, 
+                        document.getElementById('f1.s2').value, 
+                        document.getElementById('f1.s3').value
+                    )//document.getElementById('id').value obtiene el valor del elemento id">
+                <p id="resultado1"></p>
+            </fieldset>
+        </form>
+        <form name="f2" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 2</legend>
+                <p>Cálculo de la media de cinco números.</p>
+                <div>
+                    <label>Primer número:</label>
+                    <input id="f2.n1" type="number" step="any">
+                </div>
+                <div>
+                    <label>Segudo número:</label>
+                    <input id="f2.n2" type="number" step="any">
+                </div>
+                <div>
+                    <label>Tercer número:</label>
+                    <input id="f2.n3" type="number" step="any">
+                </div>
+                <div>
+                    <label>Cuarto número:</label>
+                    <input id="f2.n4" type="number" step="any">
+                </div>
+                <div>
+                    <label>Quinto número:</label>
+                    <input id="f2.n5" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular media" onclick="
+                    calcularMedia (
+                        document.getElementById('f2.n1').value,
+                        document.getElementById('f2.n2').value,
+                        document.getElementById('f2.n3').value,
+                        document.getElementById('f2.n4').value,
+                        document.getElementById('f2.n5').value
+                    )">
+            </fieldset>
+        </form>
+        <form name="f3" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 3</legend>
+                <p>Cálculo del cuadrado de un número.</p>
+                <div>
+                    <label>Introduce un número</label>
+                    <input id="f3.numero" type="number">
+                    </div>
+                <input type="submit" value="Calcular cuadrado" onclick="
+                   calcularCuadrado (document.getElementById('f3.numero').value)">
+            </fieldset>
+        </form>
+        <form name="f4" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 4</legend>
+                <p>
+                    Este programa calcula la suma, la resta, el producto, el cociente
+                    y el módulo de los números dados abajo. Sólo admite números enteros.
+                </p>
+                <div>
+                    <label>Primer operando:</label>
+                    <input id="f4.o1" type="number" step="any">
+                </div>
+                <div>
+                    <label>Sgundo operando:</label>
+                    <input id="f4.o2" type="number" step="any">
+                </div>
+                <input type="submit" value="Operar" onclick="
+                    calcularOperaciones (
+                        document.getElementById('f4.o1').value,
+                        document.getElementById('f4.o2').value
+                    )">
+            </fieldset>
+        </form>
+        <form name="f5" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 5</legend>
+                <p>
+                    Cálculo del sueldo de un trabajador.
+                </p>
+                <div>
+                    <label>Horas trabajadas:</label>
+                    <input id="f5.horas" type="number">
+                </div>
+                <div>
+                    <label>Precio por hora:</label>
+                    <input id="f5.precio_hora" type="number" step="any">
+                </div>
+                <div>
+                    <label>Base del IRPF (en %):</label>
+                    <input id="f5.irpf" type="number" step="any">
+                </div>
+                <input type ="submit" value="Calcular sueldo" onclick="
+                    sueldo (
+                        document.getElementById('f5.horas').value,
+                        document.getElementById('f5.precio_hora').value,
+                        document.getElementById('f5.irpf').value
+                    )
+                ">
+            </fieldset>
+        </form>
+        <form name="f6" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 6</legend>
+                <p>Cálculo del número total de segundos.</p>
+                <div>
+                    <label>Introduce el nº de horas:</label>
+                    <input id="f6.horas" type="number" >
+                </div>
+                <div>
+                    <label>Introduce el nº de minutos:</label>
+                    <input id="f6.minutos" type="number">
+                </div>
+                <div>
+                    <label>Introduce el nº de segundos:</label>
+                    <input id="f6.segundos" type="number">
+                </div>
+                <input type="submit" value="Calcular total de segundos" onclick="
+                    calcularSegundos (
+                        document.getElementById('f6.horas').value,
+                        document.getElementById('f6.minutos').value,
+                        document.getElementById('f6.segundos').value
+                    )">
+            </fieldset>
+        </form>
+        <form name="f7" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 7</legend>
+                <p>
+                    Cálculo del precio total en función del precio unitario, las
+                    unidades compradas, el descuento (si se aplica) y el IVA.
+                </p>
+                <div>
+                    <label>Precio unitario:</label>
+                    <input id="f7.unitario" type="number" step="any">
+                </div>
+                <div>
+                    <label>Cantidad comprada:</label>
+                    <input id="f7.cantidad" type="number" step="any">
+                </div>
+                <div>
+                    <label>Descuento (en %):</label>
+                    <input id="f7.descuento" type="number" step="any">
+                </div>
+                <div>
+                    <label>IVA (en %):</label>
+                    <input id="f7.iva" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular el total a pagar." onclick="
+                    sueldo2 (
+                        document.getElementById('f7.unitario').value,
+                        document.getElementById('f7.cantidad').value,
+                        document.getElementById('f7.descuento').value,
+                        document.getElementById('f7.iva').value
+                    )">
+            </fieldset>
+        </form>
+        <form name="f8" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 8</legend>
+                <p>
+                    Cálculo del IVA y el precio neto a partir de la cantidad total
+                    introducida.
+                </p>
+                <div>
+                    <label>Cantidad total:</label>
+                    <input id="f8.total" type="number" step="any">
+                </div>
+                <div>
+                    <label>IVA:</label>
+                    <input id="f8.iva" type="number" value="21" step="any" disabled>
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    sacarIva_neto(
+                        document.getElementById('f8.total').value,
+                        document.getElementById('f8.iva').value
+                    )">
+            </fieldset>
+        </form>
+        <form name="f9" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 9</legend>
+                <p>Cálculo de la potencia de un número</p>
+                <div>
+                    <label>Número:</label>
+                    <input id="f9.base" type="number" step="any">
+                </div>
+                <div>
+                    <label>Exponente:</label>
+                    <input id="f9.exp" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular potencia" onclick="
+                    elevarNumero (
+                        document.getElementById('f9.base').value,
+                        document.getElementById('f9.exp').value
+                    )">
+            </fieldset>
+        </form>
+        <form name="f10" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 10 - No funciona</legend>
+                <p>
+                    Cálculo del sueldo mensual de un empleado a partir del número
+                    de horas trabajadas. El número de horas mensuales es de 160, siendo el
+                    resto horas extraordinarias.
+                </p>
+                <div>
+                    <label>Horas trabajadas:</label>
+                    <input id="f10.horas" type="number" value="160" disabled>
+                </div>
+                <div>
+                    <label>Precio hora ordinaria:</label>
+                    <input id="f10.precio_ordinaria" type="number" step="any">
+                </div>
+                <div>
+                    <label>Número de horas extra trabajadas:</label>
+                    <input id="f10.horas_extra" type="number" step="any">
+                </div>
+                <div>
+                    <label>Precio de hora extra:</label>
+                    <input id="f10.precio_extra" type="number" step="any">
+                </div>
+                <div>
+                    <label>IRPF (%):</label>
+                    <input id="f10.irpf" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular salario" onclick="
+                    sueldoExtra (
+                        document.getElementById('f10.horas').value,
+                        document.getElementById('f10.precio_ordinaria').value,
+                        document.getElementById('f10.horas_extra').value,
+                        document.getElementById('f10.precio_extra').value,
+                        document.getElementById('f10.irpf').value
+                )">
+            </fieldset>
+        </form>
+        <form name="f11" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 11</legend>
+                <p>Conversión de grados Farenheit a Celsuis.</p>
+                <div>
+                    <label>Temperatura en ºF:</label>
+                    <input id="f11.f" type="number" step="any">
+                </div>
+                <input type="submit" value="Convertir ºF -> ºC" onclick=" 
+                    convertirF (document.getElementById('f11.f').value)">
+            </fieldset>
+        </form>
+        <form name="f12" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 12</legend>
+                <p>Cáculo de la superficie de un triángulo.</p>
+                <div>
+                    <label>Base (en cm):</label>
+                    <input id="f12.base" type="number">
+                </div>
+                <div>
+                    <label>Altura (en cm):</label>
+                    <input id="f12.altura" type="number">
+                </div>
+                <input type="submit" value="Calcular superficie" onclick="
+                    superficieTriangulo (
+                        document.getElementById('f12.base').value,
+                        document.getElementById('f12.altura').value
+                    )">
+            </fieldset>
+        </form>
+        <form name="f13" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 13</legend>
+                <p>Cálculo del área y longitud de una cicunferencia a partir del radio.</p>
+                <div>
+                    <label>Radio (en cm):</label>
+                    <input id="f13.radio" type="number" step="any">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                   dimensionCircunferencia (document.getElementById('f13.radio').value)">
+            </fieldset>
+        </form>
+        <form name="f14" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 14</legend>
+                <p>A partir de un número de días dado, se calcula el número de años,
+                   de meses y de días.
+                </p>
+                <div>
+                    <label>Número total de días:</label>
+                    <input id="f14.dias" type="number">
+                </div>
+                <input type="submit" value="Calcular" onclick="
+                    calcularDias (document.getElementById('f14.dias').value)">
+            </fieldset>
+        </form>
+        <form name="f15" onsubmit="return false">
+            <fieldset>
+                <legend>Ejercicio 15</legend>
+                <p>Descomponer un número de 4 cifras en millares, centenas,
+                   decenas y unidades.
+                </p>
+                <div>
+                    <label>Introduce el número:</label>
+                    <input id="f15.numero" type="number">
+                </div>
+                <input type="submit" value="Descomponer" onclick="
+                    descomponerNumero (document.getElementById('f15.numero').value)">
+            </fieldset>
+        </form>
+        <footer>
+           (c) 2019 | Fran Gálvez | IES Los Manantiales
+        </footer>
+    </div> 
+</body>
+</html>
